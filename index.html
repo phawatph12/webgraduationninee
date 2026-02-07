@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Graduation Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+body {font-family: "Open Sans"}
+/* Reduce spacing for the top header */
+header.w3-container.w3-center.w3-padding-48 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+header.w3-container.w3-center.w3-padding-48 h1,
+header.w3-container.w3-center.w3-padding-48 h6 {
+  margin: 2px 0;
+}
+
+/* Flex image utilities for left/right layout */
+.flex-images {display:flex; justify-content:space-between; align-items:center; gap:12px; padding:8px; height:100%; box-sizing:border-box;}
+.flex-images .ad-img {max-width:48%; max-height:100%; width:auto; height:auto; display:block; object-fit:contain; border-radius:4px;}
+.flex-images .ad-img.small {max-width:120px; max-height:160px; width:auto;}
+/* Congrats modal styles */
+.congrats-wrap {text-align:center; padding:24px; position:relative; overflow:hidden; min-height:360px;}
+.congrats-title {font-size:40px; letter-spacing:4px; font-weight:700; background:linear-gradient(90deg,#6fb3ff,#2b7cff); -webkit-background-clip:text; color:transparent; animation:popIn 900ms ease both; z-index:2; position:relative}
+.congrats-sub {margin-top:8px; font-size:18px; color:#2f4f7c; z-index:2; position:relative}
+/* centered lily with fade-in - placed lower and behind text */
+.lily {position:absolute; top:160px; left:50%; transform:translateX(-50%); width:200px; max-width:80%; opacity:0; animation:fadeIn 1.2s ease forwards; z-index:1}
+/* ensure close icon sits above image and is keyboard accessible */
+.congrats-wrap .fa-remove {position:relative; z-index:4; pointer-events:auto}
+.lily {pointer-events:none}
+@keyframes fadeIn {0%{opacity:0; transform:translateX(-50%) translateY(16px) scale(0.98)}100%{opacity:1; transform:translateX(-50%) translateY(0) scale(1)}}
+/* keep floatUp available if needed */
+@keyframes floatUp {0%{transform:translateY(0) scale(0.9); opacity:0.9}50%{opacity:1}100%{transform:translateY(-240px) scale(1); opacity:0}}
+@keyframes popIn {0%{transform:scale(0.85); opacity:0}100%{transform:scale(1); opacity:1}}
+/* Subscribe block image: center, enlarge and add subtle effects */
+.subscribe-block {text-align:center; padding:12px 0;}
+.subscribe-block .subscribe-img {display:inline-block; width:100%; max-width:420px; border-radius:8px; box-shadow:0 8px 18px rgba(43,76,124,0.12); transition:transform .28s ease, box-shadow .28s ease;}
+.subscribe-block .subscribe-img:hover, .subscribe-block .subscribe-img:focus {transform:translateY(-6px) scale(1.02); box-shadow:0 18px 30px rgba(43,76,124,0.18); outline:none;}
+@keyframes floatSlow {0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+.subscribe-block .subscribe-img.pulse {animation:floatSlow 3.6s ease-in-out infinite;}
+
+/* Mobile adjustments: ensure lily doesn't overlap text or the close button */
+@media (max-width:600px) {
+  .lily { top:220px; width:160px; }
+  .congrats-wrap { padding-top:36px; }
+  .congrats-wrap > p { margin-top:320px !important; }
+  .subscribe-block .subscribe-img { max-width:280px; }
+}
+</style>
+</head>
+<body class="w3-light-grey">
+<div id="graduation">
+<!-- Navigation bar with social media icons -->
+<div class="w3-bar w3-black w3-hide-small">
+  <a href="#" class="w3-bar-item w3-button">V</a>
+  <a href="#" class="w3-bar-item w3-button">I</a>
+  <a href="#" class="w3-bar-item w3-button">R</a>
+  <a href="#" class="w3-bar-item w3-button">D</a>
+  <a href="#" class="w3-bar-item w3-button">A</a>
+</div>
+  
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1600px">
+
+    <header class="w3-container w3-center w3-padding-48 w3-white">
+        <h1 class="w3-xxxlarge"><b>Congratulations! </b></h1>
+        <h6>You did it <span class="w3-tag">V</span></h6>
+    </header>
+
+  <!-- Image header -->
+  <header class="w3-display-container w3-wide" id="home">
+    <img class="w3-image" src="images/IMG_8347.PNG" alt="Fashion Blog" width="1600" height="1060">
+    <div class="w3-display-left w3-padding-large">
+      <h1 class="w3-text-white">V</h1>
+      <h1 class="w3-jumbo w3-text-white w3-hide-small"><b>The Graduate</b></h1>
+      <h6><button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('subscribe').style.display='block'">Click here</button></h6>
+    </div>
+  </header>
+
+  <!-- Grid -->
+  <div class="w3-row w3-padding w3-border">
+
+    <!-- Blog entries -->
+    <div class="w3-col l8 s12">
+    
+      <!-- Blog entry -->
+      <div class="w3-container w3-white w3-margin w3-padding-large">
+
+        <div class="w3-justify">
+          <img src="images/IMG_8348.PNG" alt="Girl Hat" style="width:100%" class="w3-padding-16">
+          <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
+          <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo1')" id="myBtn"><b>Replies  </b> <span class="w3-tag w3-white">1</span></button></p>
+          <p class="w3-clear"></p>
+          <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
+            <hr>
+              <div class="w3-col l2 m3">
+                <img src="images/IMG_8358.PNG" style="width:90px;">
+              </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Blog entry -->
+      <div class="w3-container w3-white w3-margin w3-padding-large">
+
+        <div class="w3-justify">
+          <img src="images/IMG_8350.PNG" alt="Men in Hats" style="width:100%" class="w3-padding-16">
+          <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
+          <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo2')"><b>Replies  </b> <span class="w3-tag w3-white">2</span></button></p>
+          <p class="w3-clear"></p>
+          
+          <!-- Example of comment field -->
+          <div id="demo2" style="display:none">
+            <div class="w3-row">
+              <hr>
+              <div class="w3-col l2 m3">
+                <img src="images/IMG_8359.PNG" style="width:90px;">
+              </div>
+            </div>
+            <div class="w3-row w3-margin-bottom">
+              <div class="w3-col l2 m3">
+                <img src="images/IMG_8360.PNG" style="width:90px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog entry -->
+      <div class="w3-container w3-white w3-margin w3-padding-large">
+
+        <div class="w3-justify">
+          <img src="images/IMG_8355.PNG" alt="Runway" style="width:100%" class="w3-padding-16">
+          <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
+          <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo3')"><b>Replies  </b> <span class="w3-tag w3-white">1</span></button></p>
+          <p class="w3-clear"></p>
+          
+          <!-- Example of comment field -->
+          <div id="demo3" style="display:none">
+            <hr>
+            <div class="w3-row w3-margin-bottom">
+              <div class="w3-col l2 m3">
+                <img src="images/IMG_8361.PNG" style="width:90px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <!-- END BLOG ENTRIES -->
+    </div>
+
+    <!-- About/Information menu -->
+    <div class="w3-col l4">
+      <!-- About Card -->
+      <div class="w3-white w3-margin">
+        <div class="w3-container w3-black">
+          <p>Congrats, graduate! May your days be filled with blooming lilies, endless carbs that never make you gain weight, and lots of adorable cats to keep you smiling. The world is yours now!🐱”</p>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Posts -->
+      <div class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h4>ᯓº·🥨｡*˚🍦₊</h4>
+        </div>
+        <div class="w3-row-padding" style="display:flex; flex-direction:column; gap:8px;">
+          <img src="images/IMG_8351.PNG" alt="Post 1" style="width:100%; height:auto; border-radius:6px;">
+          <img src="images/IMG_8352.PNG" alt="Post 2" style="width:100%; height:auto; border-radius:6px;">
+        </div>
+      </div>
+      <hr>
+
+      <!-- Advertising -->
+      <div class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h4>✧⋆⁺₊⋆ †🪐⋆.ᐟ.ᐟ</h4>
+        </div>
+        <div class="w3-container w3-white">
+          <div class="w3-container w3-display-container w3-light-grey w3-section" style="height:200px">
+            <div class="flex-images" aria-hidden="false">
+              <img src="images/IMG_8354.PNG" alt="Ad left" class="ad-img small">
+              <img src="images/IMG_8349.PNG" alt="Ad right" class="ad-img small">
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+
+      
+      <!-- Subscribe -->
+      <div class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+            <h4>🧁*•.｡ꕤ˚₊｡*˚✧🍂</h4>
+          </div>
+          <div class="w3-row w3-margin-bottom subscribe-block">
+            <div class="w3-col s12">
+              <img src="images/IMG_8362.PNG" alt="Celebration" class="subscribe-img pulse">
+            </div>
+          </div>
+      </div>
+
+    <!-- END About/Intro Menu -->
+    </div>
+
+  <!-- END GRID -->
+  </div>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Congrats Modal (replaces subscribe) -->
+<div id="subscribe" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:24px; max-width:720px;">
+    <div class="w3-container w3-white congrats-wrap">
+      <i onclick="document.getElementById('subscribe').style.display='none'" onkeydown="if(event.key==='Enter'||event.key===' ') document.getElementById('subscribe').style.display='none'" role="button" tabindex="0" aria-label="Close modal" class="fa fa-remove w3-transparent w3-button w3-xlarge w3-right"></i>
+      <div class="congrats-title">CONGRATULATIONS!</div>
+      <div class="congrats-sub">Wishing you a bright future filled with success.</div>
+      <!-- decorative lily (centered) -->
+      <img src="images/lilly.png" alt="lily" class="lily" aria-hidden="true">
+      <p style="margin-top:260px;">
+        <button type="button" class="w3-button w3-black" onclick="document.getElementById('subscribe').style.display='none'">Close</button>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey" style="padding:32px">
+  <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <p>by gnip🍀</p>
+</footer>
+
+<script>
+// Toggle between hiding and showing blog replies/comments
+document.getElementById("myBtn").click();
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function likeFunction(x) {
+  x.style.fontWeight = "bold";
+  x.innerHTML = "✓ Liked";
+}
+</script>
+
+</body>
+</html>
